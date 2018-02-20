@@ -1,0 +1,8 @@
+Esimese kontrolltöö näide
+
+* Kuva sisestatud arvude suurim, vähim ja keskmine. 
+* Arvud tulevad veebis olevast failist, näiteks 
+http://www.tlu.ee/~jaagup/veeb1/pikkused.txt
+Koosta alamprogramm, mis väljastaks etteantud aadressilt loetud arvude standardhälbe
+https://et.wikipedia.org/wiki/Standardhälve
+* Kuva arvud kriipsudena joonisel. Näita joonisel samuti välja aritmeetilise keskmise asukoht ning sealt ühe ja kahe standardhälbe kaugusel olevad vahemikud.
