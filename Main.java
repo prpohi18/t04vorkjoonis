@@ -97,7 +97,7 @@ public class Main{
 		for (Player p : Players) {
 			if ((Players.get(index)).getPosition().equals(pos1)) {
 				g.setColor(Color.BLUE);
-				int points = (Math.round(Players.get(index).getPoints()))*10;
+				int points = (Math.round(Players.get(index).getPoints())*10);
 				System.out.println(points);
 				ypos = imgHeight-points;
 				g.fillOval(x1, ypos, dotSize, dotSize);
@@ -105,7 +105,7 @@ public class Main{
 			}
 			if ((Players.get(index)).getPosition().equals(pos2)) {
 				g.setColor(Color.RED);
-				int points = (Math.round(Players.get(index).getPoints()))*10;
+				int points = (Math.round(Players.get(index).getPoints())*10);
 				ypos = imgHeight-points;
 				g.fillOval(x1, ypos, dotSize, dotSize);
 				x1 = x1+25;
