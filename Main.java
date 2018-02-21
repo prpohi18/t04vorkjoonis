@@ -26,7 +26,9 @@ public class Main{
 			rida = bi.readLine();
 		}
 		//System.out.println(getAvg(Players, "SG"));
-		Joonesta(Players, "SG", "PG");
+		drawGraph(Players, "SG", "PG");
+		System.out.println(getMin(Players, "SG"));
+		System.out.println(getMax(Players, "SG"));
 		
 		
 			
@@ -48,7 +50,39 @@ public class Main{
 			float avg = sum/(count);
 			return avg;
 		}
-	public static void Joonesta(ArrayList<Player> Players, String pos1, String pos2) throws Exception{
+	//Leiab miinimumi	
+	public static float getMin(ArrayList<Player> Players, String position){
+		float min = Players.get(0).getPoints();
+		int index = 0;
+		for(Player k : Players){
+				//Kui mängija objekti positsioon on võrdne kasutaja sisestatud positsiooniga
+				if((Players.get(index)).getPosition().equals(position)) {
+					if((Players.get(index)).getPoints()< min) {
+					//System.out.println(Players.get(index).getPoints());
+					min =((Players.get(index)).getPoints());
+					}
+				}
+				index++;
+			}
+			return min;
+	}
+	
+	public static float getMax(ArrayList<Player> Players, String position){
+		float max = Players.get(0).getPoints();
+		int index = 0;
+		for(Player k : Players){
+				//Kui mängija objekti positsioon on võrdne kasutaja sisestatud positsiooniga
+				if((Players.get(index)).getPosition().equals(position)) {
+					if((Players.get(index)).getPoints()>max) {
+					//System.out.println(Players.get(index).getPoints());
+					max =((Players.get(index)).getPoints());
+					}
+				}
+				index++;
+			}
+			return max;
+	}
+	public static void drawGraph(ArrayList<Player> Players, String pos1, String pos2) throws Exception{
 		int imgWidth = 500;
 		int imgHeight = 500;
 		BufferedImage bi = new BufferedImage(imgWidth, imgHeight, BufferedImage.TYPE_INT_RGB);
