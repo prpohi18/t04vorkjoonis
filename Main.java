@@ -25,7 +25,7 @@ public class Main{
 			Players.add(p);
 			rida = bi.readLine();
 		}
-		System.out.println(getAvg(Players, "SG"));
+		//System.out.println(getAvg(Players, "SG"));
 		Joonesta(Players, "SG", "PG");
 		
 		
@@ -39,7 +39,7 @@ public class Main{
 			for(Player k : Players){
 				//Kui mängija objekti positsioon on võrdne kasutaja sisestatud positsiooniga
 				if((Players.get(index)).getPosition().equals(position)) {
-					System.out.println(Players.get(index).getPoints());
+					//System.out.println(Players.get(index).getPoints());
 					sum = sum + ((Players.get(index)).getPoints());
 					count++;
 				}
@@ -63,14 +63,15 @@ public class Main{
 		for (Player p : Players) {
 			if ((Players.get(index)).getPosition().equals(pos1)) {
 				g.setColor(Color.BLUE);
-				int points = Math.round(Players.get(index).getPoints())*10;
+				int points = (Math.round(Players.get(index).getPoints()))*10;
+				System.out.println(points);
 				ypos = imgHeight-points;
 				g.fillOval(x1, ypos, dotSize, dotSize);
 				x1 = x1+25;
 			}
 			if ((Players.get(index)).getPosition().equals(pos2)) {
 				g.setColor(Color.RED);
-				int points = Math.round(Players.get(index).getPoints())*10;
+				int points = (Math.round(Players.get(index).getPoints()))*10;
 				ypos = imgHeight-points;
 				g.fillOval(x1, ypos, dotSize, dotSize);
 				x1 = x1+25;
@@ -87,16 +88,16 @@ public class Main{
 		g.drawLine(0, ypos, 500, ypos);
 		//Joonestan mingid graafiku skaala
 		g.setColor(Color.BLACK);
-		index = 0;
-		ypos = imgWidth-50;
-		int points = 0;
-		while (index<(imgWidth/50)){
+		index = 5;
+		ypos = imgHeight-50;
+		int points = 5;
+		while (index<(imgWidth/10)){
 			g.drawLine(0, ypos, 10, ypos);
 			ypos = ypos-5; 
 			g.drawString(String.valueOf(points), 3, ypos);
+			ypos= ypos - 45;
 			points = points+5;
-			ypos= ypos - 40;
-			index++;
+			index = index+5;
 		}
 		ImageIO.write(bi, "png", new File("keskmised.png"));
 	}
