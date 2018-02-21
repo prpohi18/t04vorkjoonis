@@ -2,9 +2,7 @@
 
 ----TO-DO LIST----
 
-* kuva joonisel kummagi liigi keskmine mass ja kõrgus.
-
-* lisa funktsioonid suurima, vähima ja aritmeetilise keskmise massi väärtuse leidmiseks.
+* lisa funktsioonid suurima, vähima ja aritmeetilise keskmise massi väärtuse leidmiseks
 
 * muuda programm klassipõhiseks
 
@@ -20,9 +18,8 @@ public class Vork {
     
     public static void main(String[] arg) throws Exception {
         
-//ANDMED
         String aadress = "http://www.tlu.ee/~jaagup/veeb1/loomad.txt";
-        //String aadress = "http://greeny.cs.tlu.ee/~somemart/test.txt";  //for debugging
+//        String aadress = "http://greeny.cs.tlu.ee/~somemart/test.txt";  //for debugging
         
         BufferedReader br = new BufferedReader(new InputStreamReader(new URL(aadress).openStream()));
         
@@ -49,6 +46,17 @@ public class Vork {
         int kassidemassidesumma = 0;
         int koertemassidesumma = 0;
         
+        int kassidekorgustesumma = 0;
+        int koertekorgustesumma = 0;
+        
+        int koertearv = 0;
+        int kassidearv = 0;
+        
+        int koertekeskminemass = 0;
+        int kassidekeskminemass = 0;
+        
+        int koertekeskminekorgus = 0;
+        int kassidekeskminekorgus = 0;
         
         //käi fail läbi ja arvuta summad, suurimad ja vähimad
         //selleks, et suurima järgi saaks arvutada punkti asukoha
@@ -58,8 +66,12 @@ public class Vork {
             //koerte ja kasside masside summa
             if(m[0].equals("kass")) {
                 kassidemassidesumma += Integer.parseInt(m[1]);
+                kassidekorgustesumma += Integer.parseInt(m[2]);
+                kassidearv += 1;
             } else if (m[0].equals("koer")) {
                 koertemassidesumma += Integer.parseInt(m[1]);
+                koertekorgustesumma += Integer.parseInt(m[2]);
+                koertearv += 1;
             }
             //suurim ja väikseim mass
             if (Integer.parseInt(m[1]) > suurimmass) {
@@ -75,6 +87,12 @@ public class Vork {
             }
             rida = br.readLine();
         }
+        
+        kassidekeskminemass = kassidemassidesumma / kassidearv;
+        kassidekeskminekorgus = kassidekorgustesumma / kassidearv;
+        
+        koertekeskminemass = koertemassidesumma / koertearv;
+        koertekeskminekorgus = koertekorgustesumma / koertearv;
         
         br.close();
         
@@ -103,8 +121,8 @@ public class Vork {
         
         //anna kasutajale teada
         System.out.println("Graafik salvestatud.\n");
+
         
-//GRAAFIK
         
         BufferedImage bi = new BufferedImage(575, 575, BufferedImage.TYPE_INT_RGB);
         Graphics g = bi.createGraphics();
@@ -113,7 +131,27 @@ public class Vork {
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, 575, 575);
         
+        g.setColor(Color.BLUE);
         
+        //sinine punkt keskmise jaoks
+        g.fillOval(((kassidekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))-5+50, 500-(kassidekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus)-5+25, 10, 10);
+        
+        //horisontaalne sinine joon
+        g.drawLine(50, (500-(kassidekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus))+25, ((kassidekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))+50, (500-(kassidekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus))+25);
+        
+        //vertikaalne sinine joon
+        g.drawLine(((kassidekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))+50, 525, ((kassidekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))+50, 500-(kassidekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus)+25);
+        
+        g.setColor(Color.RED);
+        
+        //punane punkt keskmise jaoks
+        g.fillOval(((koertekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))-5+50, 500-(koertekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus)-5+25, 10, 10);
+        
+        //horisontaalne punane joon
+        g.drawLine(50, (500-(koertekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus))+25, ((koertekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))+50, (500-(koertekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus))+25);
+        
+        //vertikaalne punane joon
+        g.drawLine(((koertekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))+50, 525, ((koertekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))+50, 500-(koertekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus)+25);
         
         g.setColor(Color.GRAY);
         
@@ -123,7 +161,7 @@ public class Vork {
         
         //y telg ja nimi
         g.drawLine(50, 525, 550, 525);
-        g.drawString("Mass, g", 500, 565);
+        g.drawString("Mass, g", 510, 565);
         
         //min ja max väärtused
         g.drawLine(45, 25, 55, 25);
@@ -133,16 +171,28 @@ public class Vork {
         g.drawString(Integer.toString(suurimkorgus), 10, 30);
         g.drawString(Integer.toString(vaikseimkorgus), 10, 530);
         g.drawString(Integer.toString(suurimmass), 530, 550);
-        g.drawString(Integer.toString(vaikseimmass), 40, 550);
+        g.drawString(Integer.toString(vaikseimmass), 25, 550);
+        
+        //keskmiste väärtused
+        g.setColor(Color.BLUE);
+        g.drawString(Integer.toString(kassidekeskminekorgus), 10, 500-(kassidekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus)+2+25);
+        g.drawString(Integer.toString(kassidekeskminemass), ((kassidekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))-3+50, 550);
+        g.setColor(Color.RED);
+        g.drawString(Integer.toString(koertekeskminekorgus), 10, 500-(koertekeskminekorgus-vaikseimkorgus) * 500 / (suurimkorgus-vaikseimkorgus)+2+25);
+        g.drawString(Integer.toString(koertekeskminemass), ((koertekeskminemass-vaikseimmass) * 500 / (suurimmass-vaikseimmass))-3+50, 550);
         
         //legend
-        g.drawString("- Koerad", 230, 570);
-        g.drawString("- Kassid", 330, 570);
+        g.setColor(Color.GRAY);
+        g.drawString("Koerad", 80, 570);
+        g.drawString("Kassid", 160, 570);
+        g.drawString("Korete keskmine", 240, 570);
+        g.drawString("Kasside keskmine", 380, 570);
         g.setColor(Color.RED);
-        g.fillRect(215, 562, 8, 8);
+        g.fillRect(65, 562, 8, 8);
+        g.fillOval(225, 560, 10, 10);
         g.setColor(Color.BLUE);
-        g.fillRect(315, 562, 8, 8);
-        
+        g.fillRect(145, 562, 8, 8);
+        g.fillOval(365, 560, 10, 10);
         
         //kuna suurim ja vähim on olemas, loe fail
         //uuuesti ja sel korral arvuta
