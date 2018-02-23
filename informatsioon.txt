@@ -1,0 +1,14 @@
+Suurim mass: 12000
+Väikseim mass: 800
+Suurim kõrgus: 100
+Väikseim kõrgus: 20
+Kasside kõrguste summa: 165
+Koerte kõrguste summa: 450
+Kasside masside summa: 7800
+Koerte masside summa: 46000
+Kasside keskmine kõrgus: 27
+Koerte keskmine kõrgus: 64
+Kasside keskmine mass: 1300
+Koerte keskmine mass: 6571
+
+Koerte masside summa on suurem.
