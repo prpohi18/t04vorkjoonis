@@ -12,8 +12,7 @@ public class joonis{
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, 300, 600);
         String aadress="http://www.tlu.ee/~jaagup/veeb1/loomad.txt";
-        BufferedReader br=new BufferedReader(new InputStreamReader(
-          new URL(aadress).openStream()));
+        BufferedReader br=new BufferedReader(new InputStreamReader(new URL(aadress).openStream()));
         String rida=br.readLine();
         rida=br.readLine();
         
@@ -33,6 +32,7 @@ public class joonis{
                 mass= m[1];
                 kõrg=m[2];
             }
+            //massid ja kõrgused eri värvides
             g.drawString(mass,10000/Integer.parseInt(m[1]),10000/Integer.parseInt(m[1]));//string,int x, int y
             g.drawString(kõrg,10000/Integer.parseInt(m[2]),10000/Integer.parseInt(m[2]));//string intx int y
             rida=br.readLine();

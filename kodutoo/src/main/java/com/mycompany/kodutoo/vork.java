@@ -13,6 +13,8 @@ public class vork {
             return;
         }
         rida=br.readLine();
+        
+        //muutujad
         int kassidemassidesumma=0;
         int i=0;
         int koeradesumma=0;
@@ -32,9 +34,12 @@ public class vork {
         int väikseimkass1=1000;
         int väikseimkoer=0;
         int väikseimkoer1=12000;
+        int keskKass=0;
+        int keskKoer=0;
+        int arv1=0;
+        int arv2=0;
                 
         while(rida!=null){
-            System.out.println(rida);
             String[] m=rida.split(",");
             //Sisesta kaks arvu koerte massideks ning kolm arvu kasside massideks. Näita, kummast liigist loomade masside summa on suurem.
             if(m[0].equals("kass") && i!=3){
@@ -51,7 +56,7 @@ public class vork {
                 väikseimkass=Integer.parseInt(m[1]);
                 kassidemassidesumma+=Integer.parseInt(m[1]);
                 kassikõrg+=Integer.parseInt(m[2]);
-                i++;
+                arv1++;
                 if(suurimkass1<suurimkass){
                     suurimkass1= suurimkass;}   
              }
@@ -61,7 +66,7 @@ public class vork {
             if(m[0].equals("koer")){
                 suurimkoer=Integer.parseInt(m[1]);
                 väikseimkoer=Integer.parseInt(m[1]);
-                b++;
+                arv2++;
                 koeradesumma+=Integer.parseInt(m[1]);
                 koerkõrg+=Integer.parseInt(m[2]);
                 if(suurimkoer1<suurimkoer){
@@ -90,3 +95,13 @@ public class vork {
         }
     }
 }
+/*
+Kassimasside summa on :11800
+Koertemasside summa on:51000
+Masside summa on:62800
+Suurima kassi mass on:2000
+Suurima koera mass on:12000
+Väikseim kass on:800
+Väikseim koer on:2000
+Koerte masside summa on suurem.
+*/
