@@ -1,7 +1,0 @@
-Kasside masside summa: 7800
-Koerte masside summa: 46000
-Suurim mass: 12000
-Väikseim mass: 800
-Suurim kõrgus: 100
-Väikseim kõrgus: 20
-Koerte masside summa on suurem.
