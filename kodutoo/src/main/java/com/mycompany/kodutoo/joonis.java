@@ -40,9 +40,7 @@ public class joonis{
                 save1=save1+Integer.parseInt(m[1]);//masside summa 
                 save3=save3+Integer.parseInt(m[2]);//kõrguste summa
                 i++;//mitu kassi oli
-                kasskeskkõrg=save3/i;
-                kasskeskmass=save1/i;
-                
+          
             }
             else{
                 g.setColor(Color.white);
@@ -51,23 +49,26 @@ public class joonis{
                 save2=save2+Integer.parseInt(m[1]);//masside summa
                 save4=save4+Integer.parseInt(m[2]);//kõrguste  summa
                 b++;
-                koerkeskmass=save2/b;
-                koerkeskkõrg=save4/b;
-               
             }
-           
             
             //joonised
             //g.fillRect(Integer.parseInt(m[1])/30, 300-Integer.parseInt(m[2])*2, 5, 5);
             g.drawString(mass,Integer.parseInt(m[1]),Integer.parseInt(m[1]));//string,int x, int y
             g.drawString(kõrg,Integer.parseInt(m[2]),Integer.parseInt(m[2]));//string intx int y
-            g.drawRect(kasskeskmass,kasskeskmass,10,10);
-            g.drawRect(koerkeskmass,koerkeskmass,10,10);
-            g.drawOval(kasskeskkõrg, kasskeskkõrg, 10, 10);
-            g.drawOval(koerkeskkõrg, koerkeskkõrg, 10, 10);
-            
             rida=br.readLine();
         }
+        kasskeskkõrg=save3/i;
+        kasskeskmass=save1/i;
+        koerkeskmass=save2/b;
+        koerkeskkõrg=save4/b;
+        g.setColor(Color.red); 
+        g.drawRect(kasskeskmass,kasskeskmass,10,10);
+        g.setColor(Color.gray);
+        g.drawRect(koerkeskmass,koerkeskmass,10,10);
+        g.setColor(Color.blue);
+        g.drawOval(kasskeskkõrg, kasskeskkõrg, 10, 10);
+        g.setColor(Color.pink);
+        g.drawOval(koerkeskkõrg, koerkeskkõrg, 10, 10);
         ImageIO.write(bi, "png", new File("loomad.png"));
     }
 }
