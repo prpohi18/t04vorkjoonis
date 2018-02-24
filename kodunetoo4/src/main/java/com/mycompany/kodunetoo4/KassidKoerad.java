@@ -94,29 +94,7 @@ public class KassidKoerad {
               
                 
             }
-            /*
-            double ekraaniY = getHeight()-(int)(y*grkoef);
-            return (int)(x*grkoef);
-            int minX= ekraaniX(kirjeldused.get(0).getMin());
-            int keskY= ekraaniY(kirjeldused.get(1).getMean());
-            int ylaY=ekraaniY(kirjeldused.get(1).getMean()+kirjeldused.get(1).getStandardDeviation());
-            g.drawLine(minX, 0, minX, 300);
-            g.drawLine(0, keskY, 400, keskY);
-            g.setColor(Color.GRAY);
-            g.drawLine(0,ylaY,400,ylaY);
-            */
-            
-            /*int KMK = koertemassidesumma/koeradMass.size();
-            int SMK = kassidemassidesumma/kassidMass.size();
-            int KKK = koertekorgustesumma/koeradMass.size();
-            int SKK = kassidekorgustesumma/kassidMass.size();
-            
-            g.setColor(Color.green);
-            
-            g.drawLine(KMK,0,SMK,400);
-            //g.drawLine(0,KKK,300,SKK);
-            
-            ImageIO.write(bi, "png", new File("loomad/loomad.png"));*/
+           
             
             br.close();
                
