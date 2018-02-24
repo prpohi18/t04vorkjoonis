@@ -1,0 +1,88 @@
+import java.util.Arrays;
+import java.util.*;
+import java.io.*;
+import java.net.*;
+
+public class KysiMasse{
+	public static void main(String[] arg) throws Exception{
+		String aadress="http://www.tlu.ee/~k2di/pictures/loomad.txt";
+		BufferedReader br=new BufferedReader(new InputStreamReader(new URL(aadress).openStream())); //veebist lugemiseks
+		String rida=br.readLine(); //1. on pealkirja rida
+		if(!rida.startsWith("liik")){
+			System.out.println("sobiva pealkirjata fail");
+			return;
+		}
+		rida=br.readLine();
+		int kassidemassidkokku=0;
+		int koertemassidkokku=0;
+		int kassidekorgusedkokku=0; //UUS
+		int koertekorgusedkokku=0;  //UUS
+		int hiirtemassidkokku=0;
+		int hiirtekorgusedkokku=0;
+		
+		while(rida!=null){ //senikaua kuni pole rida null, loeb
+			System.out.println(rida);
+			String[] m=rida.split(",");
+			if(m[0].equals("kass")){
+				kassidemassidkokku+=Integer.parseInt(m[1]);
+				kassidekorgusedkokku+=Integer.parseInt(m[2]);
+			}
+			rida=br.readLine();
+			if(m[0].equals("koer")){ //MINA, koerte kohta
+				koertemassidkokku+=Integer.parseInt(m[1]); //MINA, koerte kohta
+				koertekorgusedkokku+=Integer.parseInt(m[2]);
+			} //MINA, koerte kohta
+			
+			
+			if(m[0].equals("hiir")){
+				hiirtemassidkokku+=Integer.parseInt(m[1]);
+				hiirtekorgusedkokku+=Integer.parseInt(m[2]);
+			}
+		}
+		System.out.println("Kassid kaaluvad kokku:"+kassidemassidkokku+"."+"Kasside keskmine mass on "+(kassidemassidkokku/6)+" grammi.");
+		System.out.println("Koerad kaaluvad kokku:"+koertemassidkokku+"."+"Koerte keskmine mass on "+(koertemassidkokku/7)+" grammi.");
+		System.out.println("Hiired kaaluvad kokku:"+hiirtemassidkokku+". Hiirte keskmine mass on "+(hiirtemassidkokku/4)+" grammi.");
+		
+		if (koertemassidkokku > kassidemassidkokku){
+			System.out.println("Koerad on raskemad kui kassid.");
+			if (kassidemassidkokku > hiirtemassidkokku){
+					System.out.println("Kassid raskemad kui hiired.");
+			} 			
+		}	else {
+			System.out.println("Hiired on kõige raskemad.");}
+		
+		System.out.println("Kasside kõrgused kokku: "+kassidekorgusedkokku+"."+" Kasside keskmine kõrgus on "+(kassidekorgusedkokku/6)+" cm.");
+		System.out.println("Koerte kõrgused kokku: "+koertekorgusedkokku+"."+" Koerte keskmine kõrgus on "+(koertekorgusedkokku/7)+" cm.");
+		System.out.println("Hiirte kõrgused kokku: "+hiirtekorgusedkokku+"."+" Hiirte keskmine kõrgus on "+(hiirtekorgusedkokku/4)+" cm.");
+		
+		
+	}
+}
+
+//VÄLJANÄGEMIN:
+
+//kass,1000,25
+//kass,1200,28
+//kass,1800,30
+//kass,2000,35
+//kass,1000,27
+//kass,800,20
+//koer,2000,30
+//koer,3000,30
+//koer,4000,50
+//koer,6000,70
+//koer,9000,80
+//koer,10000,80
+//koer,12000,100
+//hiir,90,2
+//hiir,100,5
+//hiir,200,12
+//hiir,8,1
+//Kassid kaaluvad kokku:7800.Kasside keskmine mass on 1300 grammi.
+//Koerad kaaluvad kokku:46000.Koerte keskmine mass on 6571 grammi.
+//Hiired kaaluvad kokku:398. Hiirte keskmine mass on 99 grammi.
+//Koerad on raskemad kui kassid.
+//Kassid raskemad kui hiired.
+//Kasside kõrgused kokku: 165. Kasside keskmine kõrgus on 27 cm.
+//Koerte kõrgused kokku: 440. Koerte keskmine kõrgus on 62 cm.
+//Hiirte kõrgused kokku: 20. Hiirte keskmine kõrgus on 5 cm.
