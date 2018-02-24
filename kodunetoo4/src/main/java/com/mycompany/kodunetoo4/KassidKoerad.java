@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.kodunetoo4;
 
 import java.awt.Color;
@@ -148,11 +144,14 @@ public class KassidKoerad {
 }
 //http://www.tlu.ee/~jaagup/veeb1/loomad.txt
 
-
-
-/*String[] array_1 = new String[];
-String[] array_2 = new String[];
-...
-
-String[][] arrays = { array_1, array_2, ...}
+/*
+Kasside masside keskmine: 1300
+Kasside kõrguste kõrguste keskmine: 1300
+Kasside max mass 1200 ja kõrgus 28
+Kasside min mass 800 ja kõrgus 20
+Koerte masside keskmine: 3000
+Koerte kõrguste keskmine: 6571
+Koerte max mass 3000 ja kõrgus 40
+Koerte min mass 12000 ja kõrgus 100
 */
+
