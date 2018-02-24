@@ -1,0 +1,4 @@
+Kasside massid
+1000, 1200, 1800, 2000, 1000, 800
+Kasside korgused
+25, 28, 30, 35, 27, 20

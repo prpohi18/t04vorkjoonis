@@ -1,0 +1,8 @@
+Kasside masside keskmine: 1300
+Kasside korguste keskmine: 27
+Kasside max mass 1200 ja korgus 28
+Kasside min mass 800 ja korgus 20
+Koerte masside keskmine: 0
+Koerte korguste keskmine: 0
+Koerte max mass 3000 ja korgus 40
+Koerte min mass 12000 ja korgus 100
