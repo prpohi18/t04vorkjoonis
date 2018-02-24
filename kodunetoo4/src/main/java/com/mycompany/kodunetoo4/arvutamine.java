@@ -5,16 +5,27 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
-public final class arvutamine {
+public class arvutamine {
+    public List<Integer> arvud;
     public arvutamine() throws IOException 
     {
         arvuta();
+        
+        arvud = new ArrayList<>();
+        for(int i = 0; i<arvuta().length; i++){
+            arvud.add(arvuta()[i]);
+        }
+        
+        
     }  
-    public String arvuta() throws IOException{   
+    public int[] arvuta() throws IOException{   
         int kassidemassidesumma=0;
         int koertemassidesumma=0;
         int kassidekorgustesumma=0;
@@ -57,6 +68,7 @@ public final class arvutamine {
                         kassMaxKorgus = (Integer.parseInt(k[i]));
                     }
                 }
+                br.close();
                 KMK = kassidemassidesumma / m.length;
                 KKK = kassidekorgustesumma / k.length;
             }
@@ -89,11 +101,14 @@ public final class arvutamine {
                         koerMaxKorgus = (Integer.parseInt( k[i]));
                     }
                 }
-                br.close();                     
+                br.close();
+                PMK = koertemassidesumma / m.length;
+                PKK = koertekorgustesumma / k.length;
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(arvutamine.class.getName()).log(Level.SEVERE, null, ex);
         }
+        int [] a = {KMK,KKK,PMK,PKK};
         String vastus = "Kasside masside keskmine: "+KMK+"\nKasside korguste keskmine: "+KKK+"\nKasside max mass "+kassMaxMass+" ja korgus "+kassMaxKorgus+"\n"
         + "Kasside min mass "+kassMinMass+" ja korgus "+kassMinKorgus+"\nKoerte masside keskmine: "+PMK+"\nKoerte korguste keskmine: "+PKK+"\nKoerte max mass "+koerMaxMass+" ja korgus "+koerMaxKorgus+"\n"
         + "Koerte min mass "+koerMinMass+" ja korgus "+koerMinKorgus;
@@ -103,6 +118,11 @@ public final class arvutamine {
             }
         } catch(IOException ex){
         } 
-        return vastus;
-    } 
+        return a;
+    }
+    public List<Integer> getList() {
+       return arvud;
+   }
+   
+    
 }

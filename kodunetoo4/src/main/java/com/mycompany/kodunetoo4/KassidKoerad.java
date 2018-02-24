@@ -3,6 +3,7 @@ package com.mycompany.kodunetoo4;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.List;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -51,10 +52,7 @@ public class KassidKoerad {
                 rida = br.readLine();
                 ImageIO.write(bi, "png", new File("loomad/loomad.png"));
             }
-            g.setColor(Color.red);
-            g.drawString("Kass = punane",10,25);
-            g.drawString("Koer = hall",10,35);
-            ImageIO.write(bi, "png", new File("loomad/loomad.png"));
+            
             br.close();
             try{
                 PrintWriter pw=new PrintWriter(new FileWriter("loomad/kassid.txt"));
@@ -81,7 +79,25 @@ public class KassidKoerad {
             System.out.println("Koerte massid "+koeradMass);
             System.out.println("Koerte kõrgused "+koeradKorgus);*/
             arvutamine a1 = new arvutamine();
-            System.out.println();
+            java.util.List<Integer> arvud = a1.getList();
+            //System.out.println(arvud);
+            int KKM = arvud.get(0);
+            int KKK = arvud.get(1);
+            int PKM = arvud.get(2);
+            int PKK = arvud.get(3);
+            g.setColor(Color.black);
+            g.drawString("Kass = punane/sinine",15,25);
+            g.drawString("Koer = hall/must",15,35);
+            g.setColor(Color.blue);
+            g.drawString(KKM+"/"+KKK,KKM/30, 300-KKK*2);
+            g.setColor(Color.black);
+            g.drawString(PKM+"/"+PKK,PKM/30, 300-PKK*2);
+            g.drawLine(10,0,10,300);
+            g.drawLine(0,290,400,290);
+            ImageIO.write(bi, "png", new File("loomad/loomad.png"));
+            
+            
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
