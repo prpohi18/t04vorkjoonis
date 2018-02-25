@@ -1,0 +1,10 @@
+koer,2000,30
+koer,3000,35
+koer,4000,40
+koer,5000,50
+koer,6000,70
+koer,9000,80
+koer,10000,80
+koer,12000,100
+Koerte masside keskmine on: 6375
+Koerte korguste keskmine on: 60

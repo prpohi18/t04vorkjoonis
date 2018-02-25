@@ -1,0 +1,9 @@
+kass,1000,25
+kass,1200,28
+kass,1800,30
+kass,1000,35
+kass,2000,25
+kass,1000,27
+kass,800,20
+Kasside masside keskmine on: 1257
+Kasside korguste keskmine on: 27
