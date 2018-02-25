@@ -1,0 +1,10 @@
+liik,mass,korgus
+koer,2000,30
+koer,3000,40
+koer,4000,50
+koer,6000,70
+koer,9000,80
+koer,10000,80
+
+Koerte keskmine mass: 6571
+Koerte keskmine kõrgus: 64
