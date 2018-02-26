@@ -1,5 +1,7 @@
 # t04vorkjoonis
 
+Kert Tamm kodutöö
+
 Kodutööks esimese kontrolltöö näitele sarnane lahendus: joonis võrgust loetud andmete põhjal + jaksu korral ka eraldi klassiga lahendus sellega seonduvalt. 
 
 Võib olla tunnis tehtud töö täiendus.
