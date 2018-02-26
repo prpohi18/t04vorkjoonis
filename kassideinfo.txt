@@ -1,0 +1,9 @@
+Kasse kokku: 6
+Kasside v2him mass: 800
+Kasside suurim mass: 2000
+Kasside massi kogusumma: 7800
+Kasside massi aritmeetiline keskmine: 1300
+Kasside lyhim: 20
+Kasside pikim: 35
+Kasside kogupikkus: 165
+Kasside keskmine pikkus: 27

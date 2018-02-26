@@ -1,0 +1,9 @@
+Koeri kokku: 7
+Koerte v2him mass: 2000
+Koerte suurim mass: 12000
+Koerte massi kogusumma: 46000
+Koerte massi aritmeetiline keskmine: 6571
+Koerte lyhim: 30
+Koerte pikim: 100
+Koerte kogupikkus: 450
+Koerte keskmine pikkus: 64
