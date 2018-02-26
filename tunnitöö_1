@@ -1,0 +1,36 @@
+import java.util.*;
+import java.io.*;
+import java.util.Scanner;
+public class Teisip1{
+  public static void main(String[] args)throws IOException{
+
+
+    float[] arvud = new float[5];
+    arvud[0] = 1.2f;
+    arvud[1] = 2.2f;
+    arvud[2] = 10.0f;
+    arvud[3] = 4.2f;
+    arvud[4] = 7.2f;
+
+    float summa = 0.0f;
+    float keskmine = 0.0f;
+    float suurim = 15.0f;
+    float v2ikseim = 0.1f;
+
+    for(int i = 0; i < arvud.length; i++){
+      summa += arvud[i];
+      keskmine = summa / i;
+      if (suurim > arvud[i]){
+        suurim = arvud[i];
+      }
+      if (v2ikseim < arvud[i]){
+        v2ikseim = arvud[i];
+      }
+
+    }
+    System.out.println("Keskmine on: "+ keskmine);
+    System.out.println("V2ikseim on: "+ suurim);
+    System.out.println("Suurim on: "+ v2ikseim);
+
+  }
+}
