@@ -52,7 +52,6 @@ public class t04vorkjoonisTriisa {
         while(rida != null){
             String[] m = rida.split(",");
             if(m[0].equals("kass") && kassCounter < kassMax ){
-                System.out.println(m[1]);
                 kassideMassid[kassCounter] = Integer.parseInt(m[1]);
                 kassideKorgused[kassCounter] = Integer.parseInt(m[2]);
                 kassCounter++;
@@ -99,12 +98,13 @@ public class t04vorkjoonisTriisa {
 }
 
 /*
-Kassimasside summa on :11800
-Koertemasside summa on:51000
-Masside summa on:62800
-Suurima kassi mass on:2000
-Suurima koera mass on:12000
-Väikseim kass on:800
-Väikseim koer on:2000
+Kassi masside summa on : 7800
+Koerte masside summa on: 46000
 Koerte masside summa on suurem.
+Suurima kassi mass on: 2000
+Suurima koera mass on: 12000
+Väikseim kass on: 800
+Väikseim koer on: 2000
+Kasside masside artimeetiline keskmine on: 1300.0
+Koerade masside artimeetiline keskmine on: 6571.4287
 */
