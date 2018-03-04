@@ -1,0 +1,14 @@
+Suurim mass: 12000
+V2ikseim mass: 800
+Suurim kõrgus: 100
+Väikseim kõrgus: 20
+Kassid:
+Kõrguste summa: 165
+Masside summa: 7800
+Keskmine mass: 1300
+Keskmine kõrgus: 27
+Koerad:
+Kõrguste summa: 450
+Masside summa: 46000
+Keskmine mass: 6571
+Keskmine kõrgus: 64
