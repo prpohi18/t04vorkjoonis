@@ -99,3 +99,11 @@ public class Vorkjoonis {
     }
     
 }
+
+/*
+Aritmeetiline keskmine on 169.9375
+Maksimum on 187
+Miinimum on 159
+H2lve on 8.34640641234298
+BUILD SUCCESSFUL (total time: 0 seconds)
+*/
