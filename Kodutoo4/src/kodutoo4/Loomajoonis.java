@@ -29,7 +29,6 @@ public class Loomajoonis {
                 g.drawLine(1, 0, 1, 350);
                 g.drawLine(2, 299, 390, 299);
                 g.drawString("Kaal", 5, 15);
-                g.drawString("Kõrgus", 261, 295);
                 System.out.println(rida);
                 
                 String[] m = rida.split(",");
