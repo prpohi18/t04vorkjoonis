@@ -91,3 +91,10 @@ public class Kodutoo4 {
         }
 }
     
+
+/* Kassid on keskmiselt madalamad kui koerad.
+Koeri on: 7 ja kasse on: 6
+Koerte keskmine kaal: 6571g
+Koerte keskmine kõrgus: 64cm
+Kasside keskmine kaal: 1300g
+Kasside keskmine kõrgus: 27cm */
