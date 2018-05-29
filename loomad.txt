@@ -1,0 +1,14 @@
+liik,mass,korgus
+kass,1000,25
+kass,1200,28
+kass,1800,30
+kass,2000,35
+kass,1000,27
+kass,800,20
+koer,2000,30
+koer,3000,40
+koer,4000,50
+koer,6000,70
+koer,9000,80
+koer,10000,80
+koer,12000,100
